@@ -2,6 +2,14 @@ pipeline {
     agent any
     stages {
 
+        stage ('Show pwd') {
+
+            steps {
+                sh 'pwd'
+            }
+
+        }
+
         stage ('Compile and Install State') {
 
             steps {
