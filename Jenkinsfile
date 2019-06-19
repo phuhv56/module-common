@@ -12,10 +12,13 @@ pipeline {
         }
 
         stage ('Compile and Install State') {
-          
+            
+            enviroment {
+                MAVEN_HOME = tool name: 'maven_361', type: 'maven'
+            }
+            
             steps {
-                def mavenHome = tool name: 'maven_361', type: 'maven'
-                sh '${mavenHome}/bin/mvn clean install'
+                sh '${MAVEN_HOME}/bin/mvn clean install'
             }
 
         }
