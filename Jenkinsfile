@@ -4,8 +4,10 @@ pipeline {
     stages {
         stage('Initialize') {
             steps {
-                def MVN_HOME = tool name: 'maven_361', type: 'maven'
-                def MVN = "${MVN_HOME}/bin/mvn"
+                script {
+                    def MVN_HOME = tool name: 'maven_361', type: 'maven'
+                    def MVN = "${MVN_HOME}/bin/mvn"
+                }
             }
         }
 
