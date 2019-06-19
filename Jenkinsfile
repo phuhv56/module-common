@@ -1,7 +1,7 @@
 pipeline {
     agent any
-    enviroment {
-        MAVEN_HOME = tool name: 'maven_361', type: 'maven'
+    tools {
+        tool name: 'maven_361', type: 'maven'
     }
     stages {
 
