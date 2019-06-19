@@ -6,8 +6,7 @@ pipeline {
             steps {
                 script {
                     def MVN_HOME = tool name: 'maven_361', type: 'maven'
-                    MVN = "${MVN_HOME}/bin/mvn"
-                    sh '${MVN}/bin/mvn clean install'
+                    sh '${MVN_HOME}/bin/mvn clean install'
                 }
             }
         }
