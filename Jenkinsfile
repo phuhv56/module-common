@@ -1,10 +1,5 @@
 pipeline {
     agent any
-
-    tools {
-        maven: 'maven_361'
-    }
-
     stages {
 
         stage ('Compile and Install State') {
