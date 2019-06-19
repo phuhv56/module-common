@@ -1,12 +1,13 @@
 pipeline {
     agent any
+    def MVN
     
     stages {
         stage('Initialize') {
             steps {
                 script {
                     def MVN_HOME = tool name: 'maven_361', type: 'maven'
-                    def MVN = "${MVN_HOME}/bin/mvn"
+                    MVN = "${MVN_HOME}/bin/mvn"
                 }
             }
         }
@@ -14,7 +15,7 @@ pipeline {
         stage ('Compile and Install State') {
             
             steps {
-                sh '${MAVEN_HOME}/bin/mvn clean install'
+                sh '${MVN}/bin/mvn clean install'
             }
 
         }
