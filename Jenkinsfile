@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    
     stages {
 
         stage ('Show pwd') {
@@ -11,9 +12,9 @@ pipeline {
         }
 
         stage ('Compile and Install State') {
-
+            def mavenHome = tool name: 'maven_361', type: 'maven'
             steps {
-                sh 'mvn clean install'
+                sh '${mavenHome}/bin/mvn clean install'
             }
 
         }
