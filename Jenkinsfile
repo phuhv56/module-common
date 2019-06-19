@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    
+    enviroment {
+        MAVEN_HOME = tool name: 'maven_361', type: 'maven'
+    }
     stages {
 
         stage ('Show pwd') {
@@ -12,10 +14,6 @@ pipeline {
         }
 
         stage ('Compile and Install State') {
-            
-            enviroment {
-                MAVEN_HOME = tool name: 'maven_361', type: 'maven'
-            }
             
             steps {
                 sh '${MAVEN_HOME}/bin/mvn clean install'
